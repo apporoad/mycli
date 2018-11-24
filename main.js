@@ -1,6 +1,7 @@
 
 var program = require('commander');
 var util = require('./util')
+var mc = require('./micli')
 
 program.version('0.1.0').parse(process.argv)
 
@@ -47,6 +48,7 @@ var main =()=>{
   try
   {
     var dm = require(ep)
+    mc.guess(dm)
   }catch(ex){
     console.log(ep +' : must be a node module')
   }
