@@ -96,3 +96,11 @@ exports.findConfig = mPath =>{
     }
    return null
 }
+
+
+exports.run = exports.play = (mOrPath,mcconfig,params)=>{
+    if(util.Type.isString(mOrPath))
+        mOrPath = require(mOrPath)
+    //todo
+    
+}

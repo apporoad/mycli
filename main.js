@@ -42,6 +42,7 @@ var main =()=>{
         return
     }
   }
+  // here is run dynamic cli
   //exts your .js absolute path
   var ep = util.solvePath(process.cwd(),program.args.length>0 ? program.args[0] : '.') 
   //load tgt 
@@ -56,11 +57,17 @@ var main =()=>{
     }else{
       mcconfig = mc.guess(dm)
     } 
-   // here to run it  
-    
+    // here get params
+    var params = getDynamicParams()
+    // here to run it  
+    mc.play(dm,mcconfig,params)
   }catch(ex){
     console.log(ep +' : must be a node module : ' + ex)
   }
+}
+
+var getDynamicParams = ()=>{
+  //todo 
 }
 
 

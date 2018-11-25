@@ -19,7 +19,7 @@ vi test.js
 exports.add = (n1,n2)=>{return n1 + n2}
 
 ```
-2. run test.js
+2. run dynamic cli : run test.js
 ```bash
 --> npx micli test.js 
 // or 
