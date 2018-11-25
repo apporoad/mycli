@@ -48,6 +48,8 @@ var main =()=>{
   try
   {
     var dm = require(ep)
+    //find micli config
+    
     mc.guess(dm)
   }catch(ex){
     console.log(ep +' : must be a node module')
