@@ -42,17 +42,24 @@ var main =()=>{
         return
     }
   }
-  //exts
+  //exts your .js absolute path
   var ep = util.solvePath(process.cwd(),program.args.length>0 ? program.args[0] : '.') 
   //load tgt 
   try
   {
     var dm = require(ep)
     //find micli config
+    var configPath = mc.findConfig(ep)
+    var mcconfig =null
+    if(configPath){
+      mcconfig =require(configPath)
+    }else{
+      mcconfig = mc.guess(dm)
+    } 
+   // here to run it  
     
-    mc.guess(dm)
   }catch(ex){
-    console.log(ep +' : must be a node module')
+    console.log(ep +' : must be a node module : ' + ex)
   }
 }
 
